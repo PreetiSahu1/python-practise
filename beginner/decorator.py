@@ -6,7 +6,8 @@ def my_decorator(func):
     def wrapper(*args, **kwargs):
         print("start time : ",time.ctime())
         result = func(*args,**kwargs)
-        print(result)
+        for i in result:
+            print(i)
 
         print("complete time : ", time.ctime())
 
@@ -16,9 +17,10 @@ def my_decorator(func):
 @my_decorator
 def task():
     add= 5+6
+    sub= 17-10
+    tab = 5
     print("execution")
-    return add
-
+    return add,sub,tab
 
 
 result=task()
